@@ -61,7 +61,7 @@ def menu():
                 print()
                 print("Your letters are: ")
                 #insert letters here!!!
-                easy_letters = "easy random letters"
+                easy_letters = random_letters(3,5)
 
                 print (easy_letters)
                 return (easy_letters)
@@ -73,7 +73,7 @@ def menu():
                 print()
                 print("Your letters are: ")
                 #insert letters here!!!
-                mid_letters = "medium random letters"
+                mid_letters = random_letters(3,4)
                 
                 print (mid_letters)
                 return mid_letters
@@ -85,7 +85,7 @@ def menu():
                 print()
                 print("Your letters are: ")
                 #insert letters here!!!
-                hard_letters = "hard random letters"
+                hard_letters = random_letters(2,4)
 
                 print(hard_letters)
                 return hard_letters
@@ -97,12 +97,66 @@ def menu():
                 leave = ()
 
                 #Double check that the user did not accidentally select wrong input
-                #to do later!!!
+                while leave != "Y" and leave != "N":
+                    leave = input("Are you sure you want to quit,(Y) yes (N) no?: ")
+                    leave = leave.upper()
+                    
+
+                #If they want to leave, code returns to the main program
+                    
+                    if leave == "Y" :
+                        return "N"
+
+
+                #If they don't want to leave print global variable letters
+                
+                    else:
+                        print(letters)
+                 
+            break
 
         except:
             print()
             print("Please enter a number between 1-4")
             print()
 
+# random_letters function displays letters based on difficulty chosen
+# This has two parameters to make sure enough vowels are included.
 
-menu()
+def random_letters (num_v, num_c):
+    import random
+    
+
+    #Create seperate lists for both vowels and consanants
+    #Some letters are included more than once since they are most common
+    
+    vowels = ["A", "A", "A", "E", "E", "E", "I", "I", "I", "O", "O",
+              "O", "U"]
+    consanants = ["B", "C", "D", "F", "G", "H", "H", "J", "K", "L",
+                  "M", "N", "N", "P", "Q", "R", "R", "S", "S", "S",
+                  "T", "T", "V", "W", "Y", "Z"]
+    alist = []
+    blist = []
+    
+
+    #Get n number of random vowels and put them in a list
+    
+    for y in range (num_v):
+        v = random.choice(vowels)
+        alist.append(v)
+
+
+    #Get n number of random consanants and put them in a list
+        
+    for z in range (num_c):
+        c = random.choice(consanants)
+        blist.append(c)
+
+
+    #Add the two previous lists together and return it to the main program
+        
+    final_list = alist + blist
+    return final_list
+
+letters = menu()
+# ask question if user wants to play again TO DO LATER !!!
