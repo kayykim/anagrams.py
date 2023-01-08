@@ -158,5 +158,51 @@ def random_letters (num_v, num_c):
     final_list = alist + blist
     return final_list
 
+
+# valid_word takes the inputted word from user and 
+# 1. checks if it's is in the list of words, 2. already used, 3. accumulates points
+
+def valid_word():
+
+    #make a list to keep track of user's word's used
+    
+    words_used = []
+    print (" ")
+    
+    leave = ()
+
+    words_used = []
+
+    point = 0
+    total_points = 0
+    
+
+    # User repeatly inputs word until sentinel is met
+
+    while leave != "!":
+                
+        user = input ("Enter a word: ")
+        user = user.upper()
+                
+                
+        # User's word gets seperated into a list
+        
+        length_word = len(user)
+        value = 0
+                
+        for x in (user):
+            num = x
+
+            # Make sure user did not use the same word
+            
+            if num in letters:
+                value += 1
+
+            else:
+                value += 0
+                
+        user = (user + "\n").lower()
+
+        
+# Main program
 letters = menu()
-# ask question if user wants to play again TO DO LATER !!!
