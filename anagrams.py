@@ -202,6 +202,9 @@ def valid_word():
                 value += 0
                 
         user = (user + "\n").lower()
+        
+        # Conditions to be met for user inputted word to be valid.
+        # TO DO LATER!!!
 
         
 # Main program
