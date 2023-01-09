@@ -204,8 +204,36 @@ def valid_word():
         user = (user + "\n").lower()
         
         # Conditions to be met for user inputted word to be valid.
-        # TO DO LATER!!!
+        
+        if user in content_list[:] and user not in words_used and \
+           value== length_word and value > 2:            
+            point += 1
+            print ("Point:",point)
 
+                    
+            #store what user entered into the list
+            
+            words_used.append(user)
+
+
+
+        # If the word is not valid
+        
+        else:
+            print ("Not a valid word")
+
+
+        # Ask if the user wants to quit or continue
+
+        leave = input ("Enter \'!\' if you want to quit, "\
+                       "\'ENTER\' if you want to continue: ")
+        print (" ")
+
+
+    # Display the user's total points
+
+    print ("Well Played!")
+    print ("Your total points were:", point)
         
 # Main program
 letters = menu()
