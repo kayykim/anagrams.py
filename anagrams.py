@@ -237,3 +237,4 @@ def valid_word():
         
 # Main program
 letters = menu()
+valid_word()
