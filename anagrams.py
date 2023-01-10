@@ -1,3 +1,11 @@
+# Name: Kay Kim
+# Title: Anagrams
+# Description: This program is a game that displays a number of letters to the user.
+                # the user then tries to form words from this list.
+                # Please make sure to download the words.txt file to play.
+        
+# =========================================================
+
 # store the dictonary in variable: content_list
 
 my_file = open('word.txt', 'r')
@@ -234,7 +242,26 @@ def valid_word():
 
     print ("Well Played!")
     print ("Your total points were:", point)
-        
+    
+# =========================================================
+
 # Main program
 letters = menu()
-valid_word()
+
+#Make sure te program only repeats when the user wants to
+while letters != "N":
+    valid_word()
+    print ("Would you like to play again?")
+    level = input("Enter \'Y\' or \'N\' ")
+    level = level.upper()
+
+    if level == "Y":
+        letters = menu()
+        
+    else:
+        break
+
+
+# If user quits
+
+print ("Thanks for playing!")
